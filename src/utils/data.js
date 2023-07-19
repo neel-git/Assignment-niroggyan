@@ -20,7 +20,6 @@ const sampleData = {
         timeSlot:
           "https://ik.imagekit.io/vfkpqltji/times-4.jpeg?updatedAt=1689665357720",
         direction: "1 tablet by mouth 4 times a day with food every 4 hours",
-        detailDirection: "",
         sideEffects: [
           {
             sideEffect: "Headache",
@@ -49,9 +48,8 @@ const sampleData = {
         timings: ["BED TIME"],
         timeSlot:
           "https://ik.imagekit.io/vfkpqltji/Bedtime.jpeg?updatedAt=1689665361725",
-        direction: "1 injection at bedtime",
-        detailDirection:
-          "Inject 10 ml vial under the skin as directed for 28 days inject 25 units under the skin at bedtime do not mix with other insulins/discard open vials after 28 days.",
+        direction:
+          "1 injection at bedtime Inject 10 ml vial under the skin as directed for 28 days inject 25 units under the skin at bedtime do not mix with other insulins/discard open vials after 28 days.",
         sideEffects: [
           {
             sideEffect: "Headache",
@@ -84,7 +82,6 @@ const sampleData = {
         timeSlot:
           "https://ik.imagekit.io/vfkpqltji/Bedtime_Capsule.jpeg?updatedAt=1689665358089",
         direction: "3 capsule before bed",
-        detailDirection: "",
         sideEffects: [
           {
             sideEffect: "Dizziness",
