@@ -3,35 +3,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPills } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-  const { patientName, dateOfBirth, dateOfIssue, image1, medications } =
+  const { patientName, dateOfBirth, dateOfIssue, medications, image1 } =
     sampleData;
   return (
-    <div className="main">
-      <h3 className="heading">MEDICATIONS</h3>
-      <div className="header">
-        <div>
-          <h1 className="heading">
-            <FontAwesomeIcon icon={faPills} />
-            &nbsp; Active Medications ({medications.length})
-          </h1>
+    <>
+      <nav className="header-container">
+        <div className="main-heading-container">
+          <h1 className="heading">MEDICATONS</h1>
+          <div className="logo-con">
+            <img className="logo-cap" src={image1} alt="capsule" />
+            <h1 className="main-heading">
+              Active Medications ({medications.length})
+            </h1>
+          </div>
         </div>
 
-        <div className="patient-details">
+        <div className="patient-details-container">
           <div className="patient-detail">
-            <div className="patient"> PATIENT NAME:</div>
-            <div className="detail">{patientName}</div>
+            <p className="patients">Patient Name</p>
+            <p className="details">{patientName}</p>
           </div>
           <div className="patient-detail">
-            <div className="patient"> DATE OF BIRTH:</div>
-            <div className="detail">{dateOfBirth}</div>
+            <p className="patients">Date of Birth</p>
+            <p className="details">{dateOfBirth}</p>
           </div>
           <div className="patient-detail">
-            <div className="patient"> DATE OF ISSUE:</div>
-            <div className="detail">{dateOfIssue}</div>
+            <p className="patients">Date oF Issue</p>
+            <p className="details">{dateOfIssue}</p>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+      <hr className="line" />
+    </>
   );
 };
 

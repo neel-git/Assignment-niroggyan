@@ -5,11 +5,13 @@ const Body = () => {
   const medicines = sampleData.medications;
   console.log(medicines);
   return (
-    <div className="container">
-      {medicines.map((medication) => (
-        <MedicationCard key={medication?.data?.id} medInfo={medication} />
-      ))}
-    </div>
+    <>
+      <div className="container">
+        {medicines.map((medication) => (
+          <MedicationCard key={medication?.data?.id} medInfo={medication} />
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -1,34 +1,16 @@
 import React from "react";
-import {
-  faUser,
-  faFaceDizzy,
-  faFaceTired,
-  faFaceFlushed,
-  faFaceAngry,
-  faUtensils,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MedicationCard = (props) => {
   const { medInfo } = props;
-  const sideEffectIcon = {
-    "Loss of appettite": faUtensils,
-    Fatigue: faFaceTired,
-    Nausea: faFaceFlushed,
-    Headache: faUser,
-    Constipation: faFaceAngry,
-    Dizziness: faFaceDizzy,
-  };
+
   const {
     medicineName,
     medicationReason,
     image,
-    medicinePerTime,
-    period,
-    timings,
-    timseSlot,
+    timeSlot,
     direction,
     sideEffects,
+    medicalHelp,
   } = medInfo?.data;
 
   const format = (word) => {
@@ -48,7 +30,7 @@ const MedicationCard = (props) => {
     <div>
       <div className="med-name">{medicineName.toUpperCase()}</div>
       <div className="med-container">
-        <div className="subcontainer">
+        <div className="subcontainer1">
           <p className="subcontainer-heading">APPEARANCE</p>
 
           <img src={image} alt={medicineName} className="image" />
@@ -58,24 +40,31 @@ const MedicationCard = (props) => {
         <div className="sub-container2">
           <p className="subcontainer-heading">DIRECTION NOTES</p>
           <p className="description">{format(direction)}</p>
-          <img src={image} alt={direction.toUpperCase()} className="slot" />
+          <img src={timeSlot} alt={direction.toUpperCase()} className="slot" />
         </div>
         <div className="sub-container3">
           <div className="side-effect">
             <p className="subcontainer-heading">POSSIBLE SIDE EFFECTS</p>
             <ul className="effects">
-              {sideEffects.map((sideEffect, idx) => (
-                <li className="effect-list" key={idx}>
-                  <FontAwesomeIcon
-                    icon={sideEffectIcon[sideEffect]}
-                    className="effect-icon"
-                  />
-                </li>
-              ))}
+              {sideEffects &&
+                sideEffects.map((effect, idx) => (
+                  <li className="list" key={idx}>
+                    <img className="logo" src={effect.logo} alt="logo" />
+                    &nbsp;
+                    <span className="item">{effect.sideEffect}</span>
+                  </li>
+                ))}
             </ul>
           </div>
+          {medicalHelp && (
+            <React.Fragment>
+              <p className="subcontainer-heading">GET MEDICAL HELP IF</p>
+              <p className="help">{medicalHelp}</p>
+            </React.Fragment>
+          )}
         </div>
       </div>
+      <div className="lining"></div>
     </div>
   );
 };
