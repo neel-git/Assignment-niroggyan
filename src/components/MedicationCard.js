@@ -13,6 +13,7 @@ const MedicationCard = (props) => {
     medicalHelp,
   } = medInfo?.data;
 
+  //To bold the numbers
   const format = (word) => {
     const words = word.split(" ");
     const newWord = words.map((text, idx) => {

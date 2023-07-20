@@ -1,6 +1,4 @@
 import sampleData from "../utils/data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPills } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const { patientName, dateOfBirth, dateOfIssue, medications, image1 } =
